@@ -6,7 +6,7 @@ import oyaml as yaml
 import re
 
 
-data = pd.read_csv("/home/isabella/Documents/Formula/AdvancedResearch/perception/can_api/address_space.csv")
+data = pd.read_csv("./address_space.csv")
 
 # print(data.head())
 # lets start by just extracting the info thats therews
@@ -66,7 +66,7 @@ for index, row in data.iterrows():
     }
     #print(yaml_out)
 
-    with open(f'/home/isabella/Documents/Formula/AdvancedResearch/firmware_revamp/can_api/mini_yamls/{row_out["sending_board"]}.yaml', 'w+') as file:
+    with open(f'./mini_yamls/{row_out["sending_board"]}.yaml', 'w+') as file:
         # yaml.indent(mapping=4)
         yaml.dump(yaml_out, file)
 

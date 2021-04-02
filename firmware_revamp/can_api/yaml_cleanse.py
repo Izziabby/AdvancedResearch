@@ -32,17 +32,18 @@ dbc.add_frame(
 for file in os.listdir('./mini_yamls'):
     with open(f"./mini_yamls/{file}", 'r') as yaml_file:
         data = yaml.load(yaml_file)
-    data = data["MessagesTX"]
+    data_tx = data["MessagesTX"]
+    data_rx = data["MessagesRX"]
 
     #isolate name of board (transmitter)
-    board_name = list(data.keys())[1]
+    board_name = list(data_tx.keys())[0]
     #create dictionary of board specific data from yaml data
-    board_data = dict((k, data[k]) for k in [board_name] if k in data)
+    board_data = dict((k, data_tx[k]) for k in [board_name] if k in data_tx)
 
     #isolate receiver key
-    rec_names = list(data.keys())[0]
+    rec_names = list(data_rx.keys())[0]
     #create dictionary of reciever names
-    rec_data = dict((k, data[k]) for k in [rec_names] if k in data)
+    rec_data = dict((k, data_rx[k]) for k in [rec_names] if k in data_rx)
 
     #turns list of recievers into a string for dbc
     rec_vals = str(rec_data.values())
@@ -77,7 +78,12 @@ for file in os.listdir('./mini_yamls'):
             )
             start_bit += signal_data["length"]
             frame.add_signal(sig)
+
         frame.calc_dlc()
+
+
+
+
 
     dbc.add_frame(frame)
 

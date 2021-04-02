@@ -1,8 +1,8 @@
 MessagesTX:
-  receivers: air_ctrl, bms_core, brakelight_bspd_shutdown, dashboard
   throttle:
     id: 12.0
     data_bytes: 5.0
+    frequency: 100
     signals:
       error_code:
         length: 8
@@ -39,3 +39,9 @@ MessagesTX:
         min: 0
         max: 1
         unit: bit
+MessagesRX:
+  recivers:
+    air_ctrl
+    bms_core
+    breaklight_bspd_shutdown
+    dashboard
