@@ -62,7 +62,4 @@ MessagesTX:
         unit: bit
 MessagesRX:
   recivers:
-    bms_core
-    breaklight_bspd_shutdown
-    dashboard
-    throttle
+    bms_core,breaklight_bspd_shutdown,dashboard,throttle

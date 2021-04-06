@@ -34,7 +34,4 @@ MessagesTX:
         unit: bit
 MessagesRX:
   recivers:
-    air_ctrl
-    bms_core
-    breaklight_bspd_shutdown
-    throttle
+    air_ctrl,bms_core,breaklight_bspd_shutdown,throttle
