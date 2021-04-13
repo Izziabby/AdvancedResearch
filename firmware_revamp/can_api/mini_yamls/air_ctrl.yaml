@@ -61,5 +61,6 @@ MessagesTX:
         max: 1
         unit: bit
 MessagesRX:
-  recivers:
-    bms_core,breaklight_bspd_shutdown,dashboard,throttle
+  air_ctrl:
+    recivers:
+      bms_core,brakelight_bspd_shutdown,dashboard,throttle
